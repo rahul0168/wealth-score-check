@@ -53,7 +53,7 @@ export function AssetTable({
         <TableHeader>
           <TableRow>
             <TableHead>Name of Asset Class</TableHead>
-            <TableHead className="text-right">Weightage %</TableHead>
+            <TableHead className="text-right">Overall %</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -77,7 +77,7 @@ export function AssetTable({
             </TableRow>
           ))}
           <TableRow>
-            <TableCell className="font-medium">Total Weightage</TableCell>
+            <TableCell className="font-medium">Total Overall</TableCell>
             <TableCell className="text-right">{getTotalWeightage()}</TableCell>
           </TableRow>
         </TableBody>
