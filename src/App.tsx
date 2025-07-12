@@ -11,6 +11,10 @@ import { toast } from "./components/ui/use-toast";
 
 // API configuration
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+const EMAIL_API_URL = import.meta.env.VITE_EMAIL_API_URL || 'http://localhost:3000';
+const USE_EMAIL_API = import.meta.env.VITE_USE_EMAIL_API === 'true';
+const PHP_EMAIL_API_URL = import.meta.env.VITE_PHP_EMAIL_API_URL || 'http://localhost:3001';
+const USE_PHP_EMAIL_API = import.meta.env.VITE_USE_PHP_EMAIL_API === 'true';
 
 const LONG_TERM = 30;
 const SHORT_TERM = 10;
@@ -140,8 +144,15 @@ const App = () => {
         real_estate_overall: userInput["Real Estate"] || 0,
       };
 
-      // Send email via backend API
-      const response = await fetch(`${API_BASE_URL}/api/send-email`, {
+      // Send email via backend API, Node.js email API, or PHP email API service
+      let apiUrl = API_BASE_URL;
+      if (USE_PHP_EMAIL_API) {
+        apiUrl = PHP_EMAIL_API_URL;
+      } else if (USE_EMAIL_API) {
+        apiUrl = EMAIL_API_URL;
+      }
+      
+      const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

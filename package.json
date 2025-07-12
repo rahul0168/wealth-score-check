@@ -7,7 +7,17 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "email-api:install": "cd email-api && npm install",
+    "email-api:dev": "cd email-api && npm run dev",
+    "email-api:start": "cd email-api && npm start",
+    "php-email-api:install": "cd email-api-php && composer install",
+    "php-email-api:dev": "cd email-api-php && composer dev",
+    "php-email-api:start": "cd email-api-php && composer start",
+    "dev:with-email-api": "concurrently \"npm run email-api:dev\" \"npm run dev\"",
+    "dev:with-php-email-api": "concurrently \"npm run php-email-api:dev\" \"npm run dev\"",
+    "setup:email-api": "cd email-api && npm install && cp env.example .env",
+    "setup:php-email-api": "cd email-api-php && composer install && cp env.example .env"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -47,6 +57,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
