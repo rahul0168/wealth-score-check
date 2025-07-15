@@ -12,14 +12,14 @@ import {
 } from "./components/ui/table";
 
 const assetData = [
-  { name: "FD", overall: 20, returns: 5, contribution: 1 },
+  { name: "FD", overall: 5, returns: 5, contribution: 1 },
   { name: "Gold", overall: 5, returns: 5, contribution: 0.5 },
-  { name: "Debt Schemes", overall: 15, returns: 5, contribution: 0.75 },
-  { name: "Equity", overall: 30, returns: 15, contribution: 4.5 },
-  { name: "Mutual Fund", overall: 20, returns: 15, contribution: 3 },
-  { name: "Insurance", overall: 20, returns: 7, contribution: 3 },
+  { name: "Debt Schemes", overall: 40, returns: 5, contribution: 0.75 },
+  { name: "Equity", overall: 0, returns: 15, contribution: 4.5 },
+  { name: "Mutual Fund", overall: 45, returns: 15, contribution: 3 },
+  { name: "Insurance", overall: 5, returns: 7, contribution: 3 },
   { name: "AIF", overall: 0, returns: 10, contribution: 0 },
-  { name: "Real Estate", overall: 10, returns: 8, contribution: 0.8 },
+  { name: "Real Estate", overall: 0, returns: 8, contribution: 0.8 },
 ];
 
 export function AssetTable({
