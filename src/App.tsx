@@ -131,8 +131,7 @@ const individualContributions = {};
       const weight = userInput[asset.name] ?? 0;
 
       // Set contribution to 0 for these specific assets
-     const isZeroContribution = asset.name;
-      const contribution = isZeroContribution ? 0 : (weight * asset.returns) / 100;
+    const contribution = (weight * asset.returns) / 100;
 
       const rounded = Number(contribution.toFixed(2));
       individualContributions[asset.name] = rounded;
